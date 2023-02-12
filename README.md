@@ -51,14 +51,14 @@ To learn how to install Terraform, please refer [tutorials](https://developer.ha
 To learn how to setup aws-cli and login to an AWS account from the commmand line please refer [the userguide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
 ### Start deployment
-To deploy from command line, run ![Alt text](template/create-inf.sh "Deployment Script")
+To deploy from command line, run [Deployment Script](template/create-inf.sh)
 
 `$ sh create-inf.sh -b my-bucket -s mysubnet -r 10 -n 2`
 `$ sh create-inf.sh --s3bucket my-bucket --subnetid mysubnet -r 10 -n 2`
 `$ sh create-inf.sh --s3bucket my-bucket --subnetid mysubnet --rootvolumesize 5 --numcoreinstances 2`
 
 mandatory arguments - `s3bucket`, `subnetid`
-optional arguments - `rootvolumesize` (defaults 20 GB), `numcoreinstances` (defaults to 1)
+optional arguments - `rootvolumesize` (defaults 64 GB), `numcoreinstances` (defaults to 1)
 
 ####  Terraform Apply
 
@@ -68,6 +68,7 @@ To learn more about Terraform Apply command please refer [the documentation](htt
 
 You can also optionally provide input variables through a configuration file and then provide the variable file as an input to the apply command. 
 E.g. if you have stored input variables in `testing.tfvars` file, then the apply command would be `terraform apply -var-file="testing.tfvars"`
+
 To learn more please refer the [documentation](https://developer.hashicorp.com/terraform/language/values/variables)
 
 #### Resource creation & hardware provisioning
@@ -85,7 +86,7 @@ To learn more about command runner please refer [emr-commandrunner](https://docs
 
 ### Destroy Resources
 
-To destroy the resource from command line, run ![Alt text](template/destroy-inf.sh "Destroy Infrastructure Script"). This will destroy all the resources created. 
+To destroy the resource from command line, run [Destroy Infrastructure Script](template/destroy-inf.sh). This will destroy all the resources created. 
 
 `$ sh destroy-inf.sh`
 
